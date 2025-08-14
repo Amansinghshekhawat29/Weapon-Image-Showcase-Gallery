@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weapon Image Showcase Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>⚔️ Weapon Showcase Gallery</h1>
+    <div class="actions">
+      <input id="search" type="search" placeholder="Search weapons…" aria-label="Search weapons" />
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Categories">
+    <button class="tab active" data-cat="All" role="tab" aria-selected="true">All</button>
+    <button class="tab" data-cat="Handgun" role="tab">Handguns</button>
+    <button class="tab" data-cat="SMG" role="tab">SMGs</button>
+    <button class="tab" data-cat="Assault Rifle" role="tab">Assault Rifles</button>
+    <button class="tab" data-cat="Shotgun" role="tab">Shotguns</button>
+    <button class="tab" data-cat="LMG" role="tab">LMGs</button>
+    <button class="tab" data-cat="Sniper" role="tab">Snipers/DMR</button>
+  </nav>
+
+  <main>
+    <section id="grid" class="grid" aria-live="polite">
+      <!-- Cards injected by JS -->
+    </section>
+    <p id="empty" class="empty hidden">No weapons found. Try a different search or tab.</p>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" aria-labelledby="mTitle" aria-describedby="mDesc">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <button class="close" id="closeModal" aria-label="Close modal">×</button>
+      <img id="mImg" alt="" />
+      <div class="m-body">
+        <h2 id="mTitle"></h2>
+        <p id="mDesc" class="muted"></p>
+        <div class="specs">
+          <div class="spec"><span>Power</span><strong id="mPower"></strong></div>
+          <div class="spec"><span>Range</span><strong id="mRange"></strong></div>
+          <div class="spec"><span>Magazine</span><strong id="mMag"></strong></div>
+          <div class="spec"><span>Category</span><strong id="mCat"></strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <small>Tip: Click any card to see details. Use tabs or search to filter.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
